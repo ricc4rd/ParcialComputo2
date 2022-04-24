@@ -39,6 +39,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $category = $request->isMethod('put') ? Category::findOrFail($request->id): new Category;
+        $category->id = $request->input('id');
+        $category->producto = $request->input('producto');
+        $category->codigo = $request->input('codigo');
+        $category->cantidad = $request->input('cantidad');
+        $category->precio= $request->input('precio');
+
+        if($category->save()){
+            return new CategoryResource($category);
+        }
     }
 
     /**
@@ -84,6 +94,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        if($category->delete()){
+        return new CategoryResource($category);
+        }
     }
 }
