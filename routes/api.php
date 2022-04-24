@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
 
 // listamos todas las categorias 
     Route::get('categories', 'App\Http\Controllers\CategoryController@index');
@@ -32,4 +33,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // eliminar una categoria     
     Route::delete('category/{id}', 'App\Http\Controllers\CategoryController@destroy');
 
-});
+
