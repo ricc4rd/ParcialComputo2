@@ -18,9 +18,9 @@ class CategoryFactory extends Factory
     {
         return [
             'producto'=>$this->faker->text(50),
-            'codigo'=>$this->faker->number(20), 
+            'codigo'=>$this->faker->text(20), 
             'cantidad'=>$this->faker->text(20),
-            'precio'=>$this->faker->number(20)
+            'precio'=>$this->faker->text(20)
         ];
     }
 }
