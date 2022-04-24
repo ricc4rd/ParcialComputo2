@@ -16,4 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+
+// listamos todas las categorias 
+    Route::get('categories', 'App\Http\Controllers\CategoryController@index');
+
+// listar solo una categoria
+    Route::get('category/{id}', 'App\Http\Controllers\CategoryController@show');
+    
+// crear una categoria     
+    Route::post('category', 'App\Http\Controllers\CategoryController@store');
+
+// actualizar una categoria
+    Route::put('category', 'App\Http\Controllers\CategoryController@store');
+
+// eliminar una categoria     
+    Route::delete('category/{id}', 'App\Http\Controllers\CategoryController@destroy');
+
 });
