@@ -17,7 +17,10 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'producto'=>$this->faker->text(50),
+            'codigo'=>$this->faker->number(20), 
+            'cantidad'=>$this->faker->text(20),
+            'precio'=>$this->faker->number(20)
         ];
     }
 }

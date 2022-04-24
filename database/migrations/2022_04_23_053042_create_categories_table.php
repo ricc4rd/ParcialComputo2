@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('producto');
             $table->string('codigo');
             $table->string('cantidad');
-            $table->int('precio');
+            $table->string('precio');
             $table->timestamps();
         });
     }
